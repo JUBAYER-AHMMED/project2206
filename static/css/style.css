@@ -1,0 +1,61 @@
+#header {
+  background-color: rgba(163, 177, 198, 0.05);
+  height: 200px;
+}
+
+
+#rectangle {
+  background-color: #48bf9180;
+  width: 92%;
+  /* height: 50%; */
+}
+#navBar {
+  width: 92%;
+}
+#searchIcon {
+  color: #48bf91;
+  position: relative;
+  left: 12%;
+}
+#abstractBox1 {
+  position: absolute;
+  top: 0;
+  left: 20%;
+}
+#icon1 {
+  background-color: #eaeaea;
+}
+#loginbtn {
+  background-color: #48bf91;
+}
+#bg_color {
+  background-color: #48bf914d;
+}
+#text_color{
+  color: #48bf9179;
+}
+#enrollCard {
+  border: 1px solid #48bf9179;
+}
+#abstractBox2{
+  position: absolute;
+  top: 64%;
+}
+
+#abstractBox3{
+  position: absolute;
+  top: 35%;
+  right: 0;
+}
+
+#abstractBox4{
+  position: absolute;
+  top: 65%;
+  right: 0;
+}
+
+#abstractBox5{
+  position: absolute;
+  top: 52%;
+  right: 0;
+}

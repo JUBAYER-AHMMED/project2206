@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <header class="w-full flex flex-col rounded-b-3xl drop-shadow-2xl shadow-md relative z-20" id="header">
+        <div class="w-full rounded-b-xl mt-1 mb-3 shadow-[0_2px_3px_rgba(0,0,0,0.03)]">
+            <div class="mx-auto mb-1 flex items-center" id="navBar">
+                <div id="logo">
+                    <img src="{% static "images/logo.png" %}" alt="" class="w-28 h-16">
+                </div>
+                <div class="bg-white/45 rounded-full h-11 w-full flex gap-3 justify-between items-center" id="navMenu">
+                    <div id="search">            {% comment %} search form  {% endcomment %}
+                        <form method="get"
+                            action="{% url 'home' %}#all-events"
+                            class="flex items-center mx-8">
+                                <button id="searchIcon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                </svg>
+
+                            </button>
+
+                            <input
+                            type="text"
+                            name="q"
+                            value="{{ q|default_if_none:'' }}"
+                            placeholder="Search a course or program..."
+                            class=" px-12 h-8 rounded-full focus:outline-none focus:ring bg-gradient-to-b from-slate-500/60 via-gray-300/90 to-white"
+                            >
+
+                        </form>
+
+         {% comment %} search form end  {% endcomment %}
+                    </div>
+                    <ul class="flex gap-6 justify-between items-center" id="navlist">
+                        <li class="flex font-semibold gap-1" id="home">
+                            <div class="w-6 h-6 flex justify-center items-center rounded-full" id="icon1">
+                                <svg width="11" height="12" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.960317 3.36111C0.705625 3.36111 0.461365 3.25993 0.28127 3.07984C0.101176 2.89975 0 2.65549 0 2.40079V0.960317C0 0.705625 0.101176 0.461365 0.28127 0.28127C0.461365 0.101176 0.705625 0 0.960317 0H2.88095C3.13564 0 3.3799 0.101176 3.56 0.28127C3.74009 0.461365 3.84127 0.705625 3.84127 0.960317V2.40079C3.84127 2.65549 3.74009 2.89975 3.56 3.07984C3.3799 3.25993 3.13564 3.36111 2.88095 3.36111H0.960317ZM0.960317 2.40079H2.88095V0.960317H0.960317V2.40079ZM0.960317 9.60317C0.705625 9.60317 0.461365 9.502 0.28127 9.3219C0.101176 9.14181 0 8.89755 0 8.64286V4.80159C0 4.5469 0.101176 4.30263 0.28127 4.12254C0.461365 3.94245 0.705625 3.84127 0.960317 3.84127H2.88095C3.13564 3.84127 3.3799 3.94245 3.56 4.12254C3.74009 4.30263 3.84127 4.5469 3.84127 4.80159V8.64286C3.84127 8.89755 3.74009 9.14181 3.56 9.3219C3.3799 9.502 3.13564 9.60317 2.88095 9.60317H0.960317ZM0.960317 8.64286H2.88095V4.80159H0.960317V8.64286ZM4.80159 8.64286C4.80159 8.89755 4.90276 9.14181 5.08286 9.3219C5.26295 9.502 5.50721 9.60317 5.7619 9.60317H7.68254C7.93723 9.60317 8.18149 9.502 8.36159 9.3219C8.54168 9.14181 8.64286 8.89755 8.64286 8.64286V7.68254C8.64286 7.42785 8.54168 7.18359 8.36159 7.00349C8.18149 6.8234 7.93723 6.72222 7.68254 6.72222H5.7619C5.50721 6.72222 5.26295 6.8234 5.08286 7.00349C4.90276 7.18359 4.80159 7.42785 4.80159 7.68254V8.64286ZM7.68254 8.64286H5.7619V7.68254H7.68254V8.64286ZM5.7619 5.7619C5.50721 5.7619 5.26295 5.66073 5.08286 5.48063C4.90276 5.30054 4.80159 5.05628 4.80159 4.80159V0.960317C4.80159 0.705625 4.90276 0.461365 5.08286 0.28127C5.26295 0.101176 5.50721 0 5.7619 0H7.68254C7.93723 0 8.18149 0.101176 8.36159 0.28127C8.54168 0.461365 8.64286 0.705625 8.64286 0.960317V4.80159C8.64286 5.05628 8.54168 5.30054 8.36159 5.48063C8.18149 5.66073 7.93723 5.7619 7.68254 5.7619H5.7619ZM5.7619 4.80159H7.68254V0.960317H5.7619V4.80159Z" fill="#48BF91"/>
+                                </svg>
+                            </div>Home
+                        </li>
+                        <li>Courses</li>
+                        <li>Mock Test</li>
+                        <li>Question Bank</li>
+                        <li>More</li>
+                        <li class="px-3 py-1 rounded-full text-white bg-gradient-to-t from-white/30 via-green-400/80 to-white/60 hover:bg-green-400 " id="loginbtn">Register / Login</li>
+                        <li class=""><img class="w-24" src="{% static "images/default_profile_img.gif" %}" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class=" mx-auto rounded-2xl mb-4 h-1/2 relative" id="rectangle"></div>
+    </header>
+</body>
+</html>
